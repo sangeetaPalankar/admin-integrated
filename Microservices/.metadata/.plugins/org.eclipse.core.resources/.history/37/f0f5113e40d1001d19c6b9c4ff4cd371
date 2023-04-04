@@ -1,0 +1,7 @@
+server.port=8087
+
+spring.application.name=g3-auth0-service
+spring.config.import=optional:consul:
+spring.cloud.consul.host=localhost
+spring.cloud.consul.port=8500
+spring.cloud.consul.discovery.enabled=true

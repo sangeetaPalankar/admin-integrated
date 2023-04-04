@@ -1,0 +1,34 @@
+package com.capstone.application.controller;
+
+
+import java.net.MalformedURLException;
+
+import org.springframework.beans.factory.annotation.*;
+import org.springframework.web.bind.annotation.*;
+
+import com.capstone.application.model.Auth0User;
+import com.capstone.application.service.Auth0service;
+
+@RestController
+@CrossOrigin(origins="*")
+@RequestMapping("/api/v1")
+public class Auth0Controller {
+	
+	
+	
+	private Auth0service auth0service;
+	
+	public Auth0Controller(Auth0service auth0service) {
+		super();
+		this.auth0service = auth0service;
+	}
+
+	@PostMapping(path="addUser")
+	void addUser(@RequestBody Auth0User auth0User)throws MalformedURLException {
+		System.out.println(auth0User.getFirstName());
+		System.out.println(auth0User.getLastName());
+		auth0service.addUser(auth0User);
+		
+	}
+
+}

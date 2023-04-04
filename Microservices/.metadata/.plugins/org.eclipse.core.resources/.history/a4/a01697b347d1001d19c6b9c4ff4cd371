@@ -1,0 +1,11 @@
+package com.capstone.application.model;
+
+public class Auth0User {
+	String email;
+	String password;
+	String role;
+	String firstName;
+	String lastName;
+	String speciality;
+	
+	
